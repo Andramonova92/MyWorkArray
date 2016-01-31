@@ -1,0 +1,6 @@
+D:\Настя\WorkArray\WorkArray\bin\Debug\WorkArray.exe.config
+D:\Настя\WorkArray\WorkArray\bin\Debug\WorkArray.exe
+D:\Настя\WorkArray\WorkArray\bin\Debug\WorkArray.pdb
+D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.exe
+D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.pdb
+D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.csprojResolveAssemblyReference.cache
