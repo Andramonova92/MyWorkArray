@@ -15,26 +15,46 @@ namespace WorkArray
 
         static void arrayTable()
         {
-            int[] table = new int[10];
-            int number;
-            table[0]=1;
-            table[1] = 2;
-            table[2] = 3;
-            table[3] = 4;
-            table[4] = 5;
-            table[5] = 6;
-            table[6] = 7;
-            table[7] = 8;
-            table[8] = 9;
-            table[9] = 10;
-            Console.WriteLine("Please enter a number to multiply:");
-            number = int.Parse(Console.ReadLine());
-            for (int i = 0; i <table.LongLength; i++) {
-
-                int multiply = table[i] * number;
-                Console.WriteLine("{0} *{1}={2}", number, table[i], multiply);
-                Console.ReadLine();
+            // Объявляем двумерный массив
+            int[,] myArr = new int[11, 11];
+            //задаем значения первым множителям(строкам)
+            myArr.SetValue(1, 0, 1); //первое число значение, второе номер строки, третье номер столбца
+            myArr.SetValue(2,1,1);
+            myArr.SetValue(3,2,1);
+            myArr.SetValue(4,3,1);
+            myArr.SetValue(5,4,1);
+            myArr.SetValue(6,5,1);
+            myArr.SetValue(7,6,1);
+            myArr.SetValue(8,7,1);
+            myArr.SetValue(9,8,1);
+            myArr.SetValue(10,9,1);
+            //задаем значение вторым множителям(столбцам)
+            myArr.SetValue(1,1,0);//первое число значение, второе номер столбца, третье номер строки
+            myArr.SetValue(2,1,1);
+            myArr.SetValue(3,1,2);
+            myArr.SetValue(4,1,3);
+            myArr.SetValue(5,1,4);
+            myArr.SetValue(6,1,5);
+            myArr.SetValue(7,1,6);
+            myArr.SetValue(8,1,7);
+            myArr.SetValue(9,1,8);
+            myArr.SetValue(10,1,9);
+            
+            // циклы для выполнения умножения
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    myArr[i, j] = j*i;
+                  
+                    Console.Write("{0}\t", myArr[i, j]);//вывод массива
+                }
+                Console.WriteLine();
             }
+
+            
+           
+            
             Console.ReadLine();
            }
         }
