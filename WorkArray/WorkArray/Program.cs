@@ -46,7 +46,10 @@ namespace WorkArray
                 for (int j = 1; j <= 10; j++)
                 {
                     myArr[i, j] = j*i;
-                  
+                    //ConsoleColor f = new ConsoleColor();
+                     //f = ConsoleColor.Blue;
+                    if (i == j) Console.ForegroundColor = ConsoleColor.Blue;
+                    else Console.ForegroundColor = ConsoleColor.White;
                     Console.Write("{0}\t", myArr[i, j]);//вывод массива
                 }
                 Console.WriteLine();
