@@ -41,15 +41,14 @@ namespace WorkArray
             myArr.SetValue(10,1,9);
             
             // циклы для выполнения умножения
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <=10; i++)
             {
                 for (int j = 1; j <= 10; j++)
                 {
                     myArr[i, j] = j*i;
-                    //ConsoleColor f = new ConsoleColor();
-                     //f = ConsoleColor.Blue;
-                    if (i == j) Console.ForegroundColor = ConsoleColor.Blue;
-                    else Console.ForegroundColor = ConsoleColor.White;
+                    
+                    if (i == j) { Console.ForegroundColor = ConsoleColor.Blue; }
+                    else { Console.ForegroundColor = ConsoleColor.White; }
                     Console.Write("{0}\t", myArr[i, j]);//вывод массива
                 }
                 Console.WriteLine();
