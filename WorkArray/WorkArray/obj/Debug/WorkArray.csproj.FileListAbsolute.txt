@@ -4,9 +4,3 @@ D:\Настя\WorkArray\WorkArray\bin\Debug\WorkArray.pdb
 D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.exe
 D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.pdb
 D:\Настя\WorkArray\WorkArray\obj\Debug\WorkArray.csprojResolveAssemblyReference.cache
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\bin\Debug\WorkArray.exe.config
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\obj\Debug\WorkArray.exe
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\obj\Debug\WorkArray.pdb
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\bin\Debug\WorkArray.exe
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\bin\Debug\WorkArray.pdb
-C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\WorkArray\WorkArray\obj\Debug\WorkArray.csprojResolveAssemblyReference.cache
