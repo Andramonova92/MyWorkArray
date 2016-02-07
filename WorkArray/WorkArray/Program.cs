@@ -9,8 +9,9 @@ namespace WorkArray
 {
     class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
+
             int count=10;
             ListOrArraylist(count);
         }
@@ -24,36 +25,40 @@ namespace WorkArray
             elements = Console.ReadLine();
             string[] el = elements.Split(' ');
 
-            
-            if (el.Length <= count)
-            {
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < el.Length; i++)
                 {
                     int m = int.Parse(el[i]);
                     list.Insert(i, m);
+                    
+                }
+                if (list.Count > count)
+                {
+
+                    ArrayList arraylist = new ArrayList(list);
+
+                    foreach (int a in arraylist)
+                        Console.WriteLine("arraylist {0}", a);
+                    Console.ReadKey();
                 }
                 foreach (int l in list)
                     Console.WriteLine("list {0}", l);
                 Console.ReadKey();
-            }
 
-
-            else
-            {
-                ArrayList arraylist = new ArrayList();
-                for (int i = 0; i < el.Length; i++)
-                {
-                    int m = int.Parse(el[i]);
-                    arraylist.Insert(i, m);
-
-                }
-                foreach (int a in arraylist)
-                    Console.WriteLine("arraylist {0}", a);
-                Console.ReadKey();
+                
+               
+               
             }  
+            
+        
+    
+       
+
+        
+       
             }
         }
-    }
+
+
 
     
 
