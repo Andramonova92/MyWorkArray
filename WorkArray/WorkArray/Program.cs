@@ -16,31 +16,6 @@ namespace WorkArray
             ListOrArraylist(count);
         }
 
-        public static void ListAndArraylist(int count)
-        {
-
-            List<int> list = new List<int>();
-            ArrayList arraylist = new ArrayList();
-            Console.WriteLine("Enter elements");
-            string addElement = Console.ReadLine();
-            string[] Elements = addElement.Split(' ');
-
-            for (int i = 0; i < count; i++)
-            {
-                int m = int.Parse(Elements[i]);
-                list.Insert(i, m);
-                arraylist.Insert(i, m);
-            }
-            foreach (int l in list)
-                Console.WriteLine("list {0}", l);
-            Console.WriteLine("\n");
-
-            foreach (int a in arraylist)
-                Console.WriteLine("arraylist {0}", a);
-            Console.ReadKey();
-        }
-
-
 
 
         public static void ListOrArraylist(int count)
