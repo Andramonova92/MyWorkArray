@@ -26,28 +26,34 @@ namespace WorkArray
 
             string[] el = elements.Split(' ');
 
-
+           
             for (int i = 0; i < el.Length; i++)
             {
-                
-                int m = int.Parse(el[i]);
-                list.Insert(i, m);
-               list.Capacity = 10;
-                if (list.Capacity > count)
+                if (list.Count < 10)
                 {
-                   
+                    int m = int.Parse(el[i]);
+                    list.Insert(i, m);
+                    foreach (int l in list)
+                    
+                        Console.WriteLine("list {0}", l);
+                    
+                    Console.ReadKey();
+                }
+
+                else
+                {
+                    int m = int.Parse(el[i]);
+                    list.Insert(i, m);
                     ArrayList arraylist = new ArrayList(list);
                     foreach (int a in arraylist)
-
                         Console.WriteLine("arraylist {0}", a);
                     Console.ReadKey();
-
                 }
-            }
-            foreach (int l in list)
-                Console.WriteLine("list {0}", l);
-            Console.ReadKey();
+                }
+               
             
+            
+             
         }
 
     }
