@@ -42,9 +42,12 @@ namespace WorkArray
                     int m = int.Parse(el[i]);
                     list.Insert(i, m);
                     ArrayList arraylist = new ArrayList(list);
-                   foreach (int a in arraylist)
-                        Console.WriteLine("arraylist {0}", a);
-                    Console.ReadKey();
+                    if (arraylist.Count == el.Length)
+                    {
+                        foreach (int a in arraylist)
+                            Console.WriteLine("arraylist {0}", a);
+                        Console.ReadKey();
+                    }
                 }
             }
 
