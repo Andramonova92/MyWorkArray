@@ -26,17 +26,14 @@ namespace WorkArray
 
             string[] el = elements.Split(' ');
 
-           
+          
             for (int i = 0; i < el.Length; i++)
             {
                 if (list.Count < 10)
                 {
                     int m = int.Parse(el[i]);
                     list.Insert(i, m);
-                    foreach (int l in list)
-                    
-                        Console.WriteLine("list {0}", l);
-                    
+                    Console.WriteLine("list {0}", list.ElementAt<int>(i));
                     Console.ReadKey();
                 }
 
@@ -45,15 +42,12 @@ namespace WorkArray
                     int m = int.Parse(el[i]);
                     list.Insert(i, m);
                     ArrayList arraylist = new ArrayList(list);
-                    foreach (int a in arraylist)
+                   foreach (int a in arraylist)
                         Console.WriteLine("arraylist {0}", a);
                     Console.ReadKey();
                 }
-                }
-               
-            
-            
-             
+            }
+
         }
 
     }
