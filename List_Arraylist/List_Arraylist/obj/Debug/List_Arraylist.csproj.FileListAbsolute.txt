@@ -1,0 +1,12 @@
+D:\Настя\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.exe.config
+D:\Настя\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.exe
+D:\Настя\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.pdb
+D:\Настя\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.csprojResolveAssemblyReference.cache
+D:\Настя\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.exe
+D:\Настя\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.pdb
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.exe.config
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.exe
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.pdb
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.exe
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\bin\Debug\List_Arraylist.pdb
+C:\Users\Anastasiia\Documents\GitHub\MyWorkArray\List_Arraylist\List_Arraylist\obj\Debug\List_Arraylist.csprojResolveAssemblyReference.cache

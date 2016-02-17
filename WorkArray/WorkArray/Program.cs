@@ -11,51 +11,68 @@ namespace WorkArray
     {
         public static void Main(string[] args)
         {
-
             int count = 10;
-            ListOrArraylist(count);
-        }
+            List<int> list = new List<int>();
+            ArrayList arraylist = new ArrayList();
+            ListOrArraylist(count,list,arraylist);
 
-        public static void ListOrArraylist(int count)
+        }
+       
+        List<int> list = new List<int>();
+        ArrayList arraylist = new ArrayList();
+        public static void ListOrArraylist(int count, List<int> list,ArrayList arraylist)
         {
             string elements;
-            List<int> list = new List<int>();
-            
             Console.WriteLine("Enter elements");
             elements = Console.ReadLine();
 
             string[] el = elements.Split(' ');
 
-          
-            for (int i = 0; i < el.Length; i++)
+
+            for (int i = 0; i < 10; i++)
             {
                 if (list.Count < 10)
                 {
                     int m = int.Parse(el[i]);
-                    list.Insert(i, m);
-                    Console.WriteLine("list {0}", list.ElementAt<int>(i));
-                    Console.ReadKey();
+                    list.Add(m);
+                    // Console.WriteLine("list {0}", list.ElementAt<int>(i));
+                    // Console.ReadKey();
                 }
 
                 else
                 {
-                    int m = int.Parse(el[i]);
-                    list.Insert(i, m);
-                    ArrayList arraylist = new ArrayList(list);
-                    if (arraylist.Count == el.Length)
-                    {
-                        foreach (int a in arraylist)
-                            Console.WriteLine("arraylist {0}", a);
-                        Console.ReadKey();
-                    }
+                    arraylist.AddRange(list);
+                    
+                    /* int m = int.Parse(el[i]);
+                     list.Insert(i, m);
+                    */
+
                 }
+                Console.WriteLine("list {0}", list.ElementAt<int>(i));
+                Console.ReadKey();
+                if (arraylist.Count == el.Length)
+                {
+                     foreach (int a in arraylist)
+                    Console.WriteLine("arraylist {0}", a);
+
+                    Console.ReadKey();
+                }
+
+
             }
-
         }
-
+        void FillArrayList(int i)
+        {
+            for (int iterator = i; i < el.Length; i++)
+            {
+                arraylist.Add(el[i]);
+            }
+        }
     }
 
 }
+
+
         
 
 
