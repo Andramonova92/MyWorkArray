@@ -13,48 +13,31 @@ namespace List_Arraylist
         {
             ArrayList Arraylist = new ArrayList();
             List<int> List = new List<int>();
-            int[] myInts = new int[25];
-            ListOrArraylist(Arraylist, List, myInts);
+            
+           
             Console.WriteLine("Your enter");
-            Console.ReadLine();
-            foreach (int l in List)
-                Console.WriteLine("list {0}", l);
-            foreach(int a in Arraylist)
-            Console.WriteLine("arraylist {0}", a);
+            int count=int.Parse(Console.ReadLine());
+            ListOrArraylist(Arraylist, List, count);
+           
+                Console.WriteLine("list {0}", List.Count);
+          
             Console.WriteLine("Arraylist count {0}",Arraylist.Count);
             Console.ReadKey();
         }
 
      
-        static void ListOrArraylist(ArrayList arraylist, List<int> list,int[] myints) 
+        static void ListOrArraylist(ArrayList arraylist, List<int> list, int count) 
         {
           Random ran = new Random();
-          for (int i = 0; i < myints.Length; i++)
+          
+          for (int i = 0; i < count; i++)
           {
-              myints[i] = ran.Next(1, 25);
-              if (i < 10)
-              {
-
-                  list.Add(myints[i]);
-              }
+              int j = ran.Next(1, 100);   
+                  arraylist.Add(j);
+                  list.Add(j);
           }
-              
-                  arraylist.AddRange(list);
-                  FillArrayList(list,arraylist, myints);
-                              
-        }
-       static void FillArrayList(List<int>list,ArrayList arraylist,int[] myints) 
-        {
-            Random ran = new Random();
-
-            for (int j = list.Count; j < myints.Length; j++)
-            {
-                myints[j] = ran.Next(1, 25);
-                arraylist.Add(myints[j]);
-                
-            }
-
            
+       
         }
     }
 }
