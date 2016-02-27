@@ -11,33 +11,63 @@ namespace List_Arraylist
     {
         static void Main(string[] args)
         {
-            ArrayList Arraylist = new ArrayList();
-            List<int> List = new List<int>();
-            
+            var myInts = new List<int>();
+            Console.WriteLine("your enter");
+            int count = int.Parse(Console.ReadLine());
+            var a = GenerateInts(count,myInts);
+            Console.WriteLine("Your list");
+            foreach(int e in a)
+            Console.WriteLine(e);
+            Console.ReadLine();
+
+
+            Console.WriteLine("Enter ints to add","\n");
+            string elements = Console.ReadLine();
+            string[] el = elements.Split(' ');
+            var add = AddInts(myInts,el);
+            foreach(int c in add)
+            Console.WriteLine(c);
+            Console.ReadLine();
+
+            Console.WriteLine("Enter index to delete");
+            int del = int.Parse(Console.ReadLine());
+            var delete = DeleteInts(myInts,del,count);
+            foreach(int d in delete)
+            Console.WriteLine(d);
+            Console.ReadLine();
+        }
+        
+
+        public static List<int> GenerateInts(int count,List<int> myInts)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                myInts.Add(i);
+                
+            }
+            return myInts;
            
-            Console.WriteLine("Your enter");
-            int count=int.Parse(Console.ReadLine());
-            ListOrArraylist(Arraylist, List, count);
-           
-                Console.WriteLine("list {0}", List.Count);
-          
-            Console.WriteLine("Arraylist count {0}",Arraylist.Count);
-            Console.ReadKey();
+        }
+        public static List<int> AddInts(List<int> myInts,string[] el)
+        {
+            for (int i = 0; i < el.Length;i++ ) {
+                int j = int.Parse(el[i]);
+                myInts.Add(j);
+            }
+            return myInts;
         }
 
-     
-        static void ListOrArraylist(ArrayList arraylist, List<int> list, int count) 
-        {
-          Random ran = new Random();
-          
-          for (int i = 0; i < count; i++)
-          {
-              int j = ran.Next(1, 100);   
-                  arraylist.Add(j);
-                  list.Add(j);
-          }
-           
-       
-        }
+       public static List<int> DeleteInts(List<int> myInts,int del, int count)
+       {
+           try
+           {
+               
+               myInts.RemoveAt(del);
+           }
+           catch {
+               Console.WriteLine("List index exceeded");
+           }
+           return myInts;
+       }
     }
 }
