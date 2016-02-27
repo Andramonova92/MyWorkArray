@@ -29,7 +29,7 @@ namespace List_Arraylist
             Console.WriteLine(c);
             Console.ReadLine();
 
-            Console.WriteLine("Enter index to delete");
+            Console.WriteLine("Enter element to delete");
             int del = int.Parse(Console.ReadLine());
             var delete = DeleteInts(myInts,del,count);
             foreach(int d in delete)
@@ -59,18 +59,14 @@ namespace List_Arraylist
 
        public static List<int> DeleteInts(List<int> myInts,int del, int count)
        {
-           try
-           {
+           
 
                myInts.RemoveAll(delegate(int i)
                {
                    return i==del;
                });
-           }
+           
 
-           catch {
-               Console.WriteLine("List index exceeded");
-           }
            return myInts;
        }
       
