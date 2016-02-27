@@ -31,7 +31,7 @@ namespace List_Arraylist
 
             Console.WriteLine("Enter element to delete");
             int del = int.Parse(Console.ReadLine());
-            var delete = DeleteInts(myInts,del,count);
+            var delete = DeleteInts(myInts,del);
             foreach(int d in delete)
             Console.WriteLine(d);
             Console.ReadLine();
@@ -57,7 +57,7 @@ namespace List_Arraylist
             return myInts;
         }
 
-       public static List<int> DeleteInts(List<int> myInts,int del, int count)
+       public static List<int> DeleteInts(List<int> myInts,int del)
        {
            
 
