@@ -21,7 +21,7 @@ namespace List_Arraylist
             Console.ReadLine();
 
 
-            Console.WriteLine("Enter ints to add","\n");
+            Console.WriteLine("Enter ints to add");
             string elements = Console.ReadLine();
             string[] el = elements.Split(' ');
             var add = AddInts(myInts,el);
@@ -61,13 +61,18 @@ namespace List_Arraylist
        {
            try
            {
-               
-               myInts.RemoveAt(del);
+
+               myInts.RemoveAll(delegate(int i)
+               {
+                   return i==del;
+               });
            }
+
            catch {
                Console.WriteLine("List index exceeded");
            }
            return myInts;
        }
+      
     }
 }
