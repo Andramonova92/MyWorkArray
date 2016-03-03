@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Diagnostics;
 
 namespace List_Arraylist
 {
@@ -12,63 +13,104 @@ namespace List_Arraylist
         static void Main(string[] args)
         {
             var myInts = new List<int>();
+            ArrayList arraylist = new ArrayList();
+            string[] el = new string[] { };
+            //заполнение list arraylist
             Console.WriteLine("your enter");
             int count = int.Parse(Console.ReadLine());
-            var a = GenerateInts(count,myInts);
-            Console.WriteLine("Your list");
-            foreach(int e in a)
-            Console.WriteLine(e);
+            Stopwatch sw;//переменная для измерения затраченного времени на определнное действие
+            sw = Stopwatch.StartNew();//установление значение времени равным нулю и запуск измерения
+            var a = GenerateInts(count, myInts, el);
+          Console.WriteLine("Your list {0}",a.Count);
+            Console.WriteLine("List time {0}", sw.Elapsed);//вывод подсчитаного затраченного времени на заполнение
+
+            sw = Stopwatch.StartNew();
+            var b = GenerateArraylist(arraylist,count,el);
+            Console.WriteLine("Your arraylist {0}",b.Count);
+            Console.WriteLine("ArrayList time {0}", sw.Elapsed);
             Console.ReadLine();
 
-
-            Console.WriteLine("Enter ints to add");
+            //добавление новых элементов в list arraylist
+            Console.WriteLine("Enter element to add");
             string elements = Console.ReadLine();
-            string[] el = elements.Split(' ');
-            var add = AddInts(myInts,el);
-            foreach(int c in add)
-            Console.WriteLine(c);
-            Console.ReadLine();
+            el = elements.Split(' ');
+            sw = Stopwatch.StartNew();
+            var add1 = GenerateInts(count,myInts,el);
+            Console.WriteLine("New list count {0}", add1.Count);
+            Console.WriteLine("List time of adding{0}", sw.Elapsed);
 
+            sw = Stopwatch.StartNew();
+            var add2 = GenerateArraylist(arraylist,count,el);
+            Console.WriteLine("New arraylist count {0}", add2.Count);
+            Console.WriteLine("Arrayist time of adding {0}", sw.Elapsed);
+            // удаление элемента из list arraylist
             Console.WriteLine("Enter element to delete");
             int del = int.Parse(Console.ReadLine());
-            var delete = DeleteInts(myInts,del);
-            foreach(int d in delete)
-            Console.WriteLine(d);
+            sw = Stopwatch.StartNew();
+            var deleteList = DeleteInts(myInts,del);
+            Console.WriteLine("Count of List after delete {0}",deleteList.Count);
+            Console.WriteLine("Deleted time list:{0}", sw.Elapsed);
+
+            sw = Stopwatch.StartNew();
+            var deleteArraylist = DeleteArraylist(arraylist, del);
+            Console.WriteLine("Count of arraylist after delete {0}",deleteArraylist.Count);
+            Console.WriteLine("Deleted time arraylist:{0}", sw.Elapsed);
             Console.ReadLine();
         }
         
 
-        public static List<int> GenerateInts(int count,List<int> myInts)
+        public static List<int> GenerateInts(int count,List<int> myInts, string[] el)
         {
-            for (int i = 0; i < count; i++)
+            if (el.Length == 0)
             {
-                myInts.Add(i);
-                
+                for (int i = 0; i < count; i++)
+                {
+                    myInts.Add(i);
+
+                }
             }
-            return myInts;
-           
+            if (el.Length > 0)
+            {
+                for (int j = 0; j < el.Length; j++)
+                {
+                    int e = int.Parse(el[j]);
+                    myInts.Add(e);
+                }
+            }
+                return myInts;
         }
-        public static List<int> AddInts(List<int> myInts,string[] el)
-        {
-            for (int i = 0; i < el.Length;i++ ) {
-                int j = int.Parse(el[i]);
-                myInts.Add(j);
-            }
-            return myInts;
+        public static ArrayList GenerateArraylist(ArrayList arraylist, int count, string[] el) 
+        
+       {
+           if (el.Length == 0)
+           {
+               for (int i = 0; i < count; i++)
+               {
+                   arraylist.Add(i);
+               }
+           }
+           if (el.Length > 0) 
+           {
+               for (int j = 0; j < el.Length; j++) 
+               {
+                   int e = int.Parse(el[j]);
+                   arraylist.Add(e);
+               }
+           }
+               return arraylist;
         }
 
+        
        public static List<int> DeleteInts(List<int> myInts,int del)
        {
-           
-
-               myInts.RemoveAll(delegate(int i)
-               {
-                   return i==del;
-               });
-           
-
+           myInts.RemoveAt(del);
            return myInts;
        }
-      
+
+       public static ArrayList DeleteArraylist(ArrayList arraylist, int del) 
+       {
+           arraylist.RemoveAt(del);
+           return arraylist;
+       }
     }
 }
