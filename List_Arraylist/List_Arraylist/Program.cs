@@ -12,109 +12,75 @@ namespace List_Arraylist
     {
         static void Main(string[] args)
         {
-            var myInts = new List<int>();
+            List<int> list = new List<int>();
             ArrayList arraylist = new ArrayList();
-            int deleteIndex = 1;
-            Stopwatch sw;//переменная для измерения затраченного времени на определнное действие
-            sw = Stopwatch.StartNew();//установление значение времени равным нулю и запуск измерения
-            var a = GenerateInts(myInts,10);
-            Console.WriteLine("Your list {0}",a.Count);
-            Console.WriteLine("time to add a 10 element in list {0}", sw.Elapsed);//вывод подсчитаного затраченного времени на заполнение
-            var b = GenerateArraylist(arraylist,10);
-           Console.WriteLine("Your arraylist {0}",b.Count);
-            Console.WriteLine("time to add a 10 element in arraylist {0}", sw.Elapsed);
-            myInts.Clear();
-            arraylist.Clear();
-            Console.WriteLine("\n");
-
-            sw = Stopwatch.StartNew();
-            var c = GenerateInts(myInts, 100);
-           Console.WriteLine("Your list {0}",c.Count);
-            Console.WriteLine("time to add a 100 element in list {0}", sw.Elapsed);
-            var d = GenerateArraylist(arraylist, 100);
-           Console.WriteLine("Your arraylist {0}",d.Count);
-            Console.WriteLine("time to add a 100 element in arraylist {0}", sw.Elapsed);
-            myInts.Clear();
-            arraylist.Clear();
-            Console.WriteLine("\n");
-
-            sw = Stopwatch.StartNew();
-            var e = GenerateInts(myInts, 1000);
-             Console.WriteLine("Your list {0}",e.Count);
-            Console.WriteLine("time to add a 1000 element in list {0}", sw.Elapsed);
-            var f = GenerateArraylist(arraylist, 1000);
-             Console.WriteLine("Your arraylist {0}",f.Count);
-            Console.WriteLine("time to add a 1000 element in arraylist {0}", sw.Elapsed);
-            myInts.Clear();
-            arraylist.Clear();
-            Console.WriteLine("\n");
-
-            sw = Stopwatch.StartNew();
-            var g = GenerateInts(myInts, 10000);
-             Console.WriteLine("Your list {0}",g.Count);
-            Console.WriteLine("time to add a 10000 element in list {0}", sw.Elapsed);
-            var h = GenerateArraylist(arraylist, 10000);
-             Console.WriteLine("Your arraylist {0}",h.Count);
-            Console.WriteLine("time to add a 10000 element in arraylist {0}", sw.Elapsed);
-            myInts.Clear();
-            arraylist.Clear();
-            Console.WriteLine("\n");
-
-            sw = Stopwatch.StartNew();
-            var k = GenerateInts(myInts, 100000);
-            Console.WriteLine("Your list {0}",k.Count);
-            Console.WriteLine("time to add a 100000 element in list {0}", sw.Elapsed);
-            var l = GenerateArraylist(arraylist, 100000);
-            Console.WriteLine("Your arraylist {0}",l.Count);
-            Console.WriteLine("time to add a 100000 element in arraylist {0}", sw.Elapsed);
-            Console.WriteLine("\n");
-
-            sw = Stopwatch.StartNew();
-            var m = DeleteInts(myInts,deleteIndex);
-            Console.WriteLine("Delete one element");
-            Console.WriteLine("Your list {0}", m.Count);
-            Console.WriteLine("time to delete in list {0}", sw.Elapsed);
-            var n = DeleteArraylist(arraylist,deleteIndex);
-            Console.WriteLine("Your arraylist {0}", n.Count);
-            Console.WriteLine("time to delete  in arraylist{0}", sw.Elapsed);
-            Console.ReadLine();
+            var a = GenerateInts(list,10);
+             a = GenerateInts(list, 100);
+             a = GenerateInts(list, 1000);
+             a = GenerateInts(list, 10000);
+             a = GenerateInts(list, 1000000);
+           var b = GenerateArraylist(arraylist,10);
+           b = GenerateArraylist(arraylist,100);
+           b = GenerateArraylist(arraylist,1000);
+           b = GenerateArraylist(arraylist,10000);
+            b = GenerateArraylist(arraylist,1000000);
+            var c = DeleteInts(list, 1);
+            c = DeleteInts(list, (list.Count/2));
+            c = DeleteInts(list,(list.Count-1));
+            var d = DeleteArraylist(arraylist,1);
+            d = DeleteArraylist(arraylist, (arraylist.Count/2));
+            d = DeleteArraylist(arraylist, (arraylist.Count-1));
         }
         
 
-        public static List<int> GenerateInts(List<int> myInts, int count)
+        public static List<int> GenerateInts(List<int> list, int count)
         {
-            
+            Console.WriteLine("add to list {0}",count);
                 for (int i = 0; i < count; i++)
                 {
-                    myInts.Add(i);
+                    list.Add(i);
 
                 }
-
-                return myInts;
+               Stopwatch sw = Stopwatch.StartNew();
+               Console.WriteLine("Время выполнения = {0}", sw.Elapsed);
+               Console.ReadLine();
+                return list;
         }
         public static ArrayList GenerateArraylist(ArrayList arraylist, int count) 
         
        {
+           Console.WriteLine("add to arraylist {0}", count);
                for (int i = 0; i < count; i++)
                {
                    arraylist.Add(i);
                }
-           
+               Stopwatch sw = Stopwatch.StartNew();
+               Console.WriteLine("Время выполнения = {0}", sw.Elapsed);
+               Console.ReadLine();
                return arraylist;
         }
 
         
-       public static List<int> DeleteInts(List<int> myInts,int del)
+       public static List<int> DeleteInts(List<int> list,int del)
        {
+           Console.WriteLine("количество элементов list {0}", list.Count);
+           Stopwatch sw = Stopwatch.StartNew();
+           list.RemoveAt(del);
            
-           myInts.RemoveAt(del);
-           return myInts;
+           Console.WriteLine("количество элементов list после удаления {0}",list.Count);
+           Console.WriteLine("Время удаления из list = {0}", sw.Elapsed);
+           Console.ReadLine();
+           return list;
        }
 
        public static ArrayList DeleteArraylist(ArrayList arraylist, int del) 
        {
-           
+           Console.WriteLine("количество элементов arraylist {0}", arraylist.Count);
+           Stopwatch sw = Stopwatch.StartNew();
            arraylist.RemoveAt(del);
+           Console.WriteLine("количество элементов arraylist после удаления {0}", arraylist.Count);
+           Console.WriteLine("Время удаления из arraylist = {0}", sw.Elapsed);
+           Console.ReadLine();
            return arraylist;
        }
     }
