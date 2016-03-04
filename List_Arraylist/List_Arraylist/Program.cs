@@ -14,22 +14,22 @@ namespace List_Arraylist
         {
             List<int> list = new List<int>();
             ArrayList arraylist = new ArrayList();
-            var a = GenerateInts(list,10);
+            var a = GenerateInts(list,10);//заполнение list
              a = GenerateInts(list, 100);
              a = GenerateInts(list, 1000);
              a = GenerateInts(list, 10000);
              a = GenerateInts(list, 1000000);
-           var b = GenerateArraylist(arraylist,10);
+           var b = GenerateArraylist(arraylist,10);//заполнение arraylist 
            b = GenerateArraylist(arraylist,100);
            b = GenerateArraylist(arraylist,1000);
            b = GenerateArraylist(arraylist,10000);
             b = GenerateArraylist(arraylist,1000000);
-            var c = DeleteInts(list, 1);
-            c = DeleteInts(list, (list.Count/2));
-            c = DeleteInts(list,(list.Count-1));
-            var d = DeleteArraylist(arraylist,1);
-            d = DeleteArraylist(arraylist, (arraylist.Count/2));
-            d = DeleteArraylist(arraylist, (arraylist.Count-1));
+            var c = DeleteInts(list, 0);//удаление из list первого элемента
+            c = DeleteInts(list, (list.Count/2));//удаление элемента в середине
+            c = DeleteInts(list,(list.Count-1));//удаление последнего элемента
+            var d = DeleteArraylist(arraylist,0);//удаление из arraylist первого элемента
+            d = DeleteArraylist(arraylist, (arraylist.Count/2));//удаление элемента в середине
+            d = DeleteArraylist(arraylist, (arraylist.Count-1));//удаление последнего элемента
         }
         
 
