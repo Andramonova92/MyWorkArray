@@ -24,12 +24,9 @@ namespace List_Arraylist
            b = GenerateArraylist(arraylist,1000);
            b = GenerateArraylist(arraylist,10000);
             b = GenerateArraylist(arraylist,1000000);
-            var c = DeleteInts(list, 0);//удаление из list первого элемента
-            c = DeleteInts(list, (list.Count/2));//удаление элемента в середине
-            c = DeleteInts(list,(list.Count-1));//удаление последнего элемента
-            var d = DeleteArraylist(arraylist,0);//удаление из arraylist первого элемента
-            d = DeleteArraylist(arraylist, (arraylist.Count/2));//удаление элемента в середине
-            d = DeleteArraylist(arraylist, (arraylist.Count-1));//удаление последнего элемента
+            DeleteInts(list);//удаление из list первого элемента
+           DeleteArraylist(arraylist);//удаление из arraylist первого элемента
+            
         }
         
 
@@ -61,27 +58,31 @@ namespace List_Arraylist
         }
 
         
-       public static List<int> DeleteInts(List<int> list,int del)
+       public static void DeleteInts(List<int> list)
        {
            Console.WriteLine("количество элементов list {0}", list.Count);
            Stopwatch sw = Stopwatch.StartNew();
-           list.RemoveAt(del);
-           
+           list.RemoveAt(0);
+           list.RemoveAt((list.Count-1)/2);
+           list.RemoveAt(list.Count -1);
            Console.WriteLine("количество элементов list после удаления {0}",list.Count);
            Console.WriteLine("Время удаления из list = {0}", sw.Elapsed);
            Console.ReadLine();
-           return list;
+           
        }
 
-       public static ArrayList DeleteArraylist(ArrayList arraylist, int del) 
+       public static void DeleteArraylist(ArrayList arraylist) 
        {
            Console.WriteLine("количество элементов arraylist {0}", arraylist.Count);
+           int del = arraylist.Count;
            Stopwatch sw = Stopwatch.StartNew();
-           arraylist.RemoveAt(del);
+           arraylist.RemoveAt(0);
+           arraylist.RemoveAt((arraylist.Count-1)/2);
+           arraylist.RemoveAt(arraylist.Count -1);
            Console.WriteLine("количество элементов arraylist после удаления {0}", arraylist.Count);
            Console.WriteLine("Время удаления из arraylist = {0}", sw.Elapsed);
            Console.ReadLine();
-           return arraylist;
+           
        }
     }
 }
